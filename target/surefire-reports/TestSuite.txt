@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 16.167 s <<< FAILURE! - in TestSuite
+verifyloginbtn(test.TestHomePage)  Time elapsed: 0.045 s  <<< FAILURE!
+java.lang.NullPointerException
+	at test.TestHomePage.verifyloginbtn(TestHomePage.java:20)
+
+verifyLogin(test.TestLoginPage)  Time elapsed: 0.009 s  <<< FAILURE!
+java.lang.NullPointerException
+	at test.TestLoginPage.verifyLogin(TestLoginPage.java:20)
+

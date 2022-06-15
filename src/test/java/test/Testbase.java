@@ -13,6 +13,8 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class Testbase {
 	
 
@@ -21,23 +23,29 @@ public class Testbase {
 //	String browser="chrome";
 
 	
-	@Parameters({"browser"})
+//	@Parameters({"browser"})
 	@BeforeTest
-	public  void setUp(@Optional("ff") String browsername ) {
+	public  void setUp() {
 			
-		if (browsername.equals("chrome")) {
-		System.setProperty("webdriver.chrome.driver", "E:\\WebAutomationTest\\WebApp\\drivers\\chromedriver.exe");
-		driver=new ChromeDriver();
-		}
+//		if (browsername.equals("chrome")) {
+//		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\drivers\\chromedriver.exe");
+//		driver=new ChromeDriver();
+//		}
+//		
+//		else if (browsername.equals("ff")) {
+//			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"\\drivers\\geckodriver.exe");
+//			driver=new FirefoxDriver();
+//		}
 		
-		else if (browsername.equals("ff")) {
-			System.setProperty("webdriver.gecko.driver", "E:\\WebAutomationTest\\WebApp\\drivers\\geckodriver.exe");
-			driver=new FirefoxDriver();
-		}
+		
+		WebDriverManager.chromedriver().setup();
+		driver=new ChromeDriver();
 		
 		driver.navigate().to("http://automationpractice.com/index.php");
 		
 	}
+
+
 	
 //	@AfterTest
 //	public void closebrowser() {
